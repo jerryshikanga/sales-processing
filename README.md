@@ -1,6 +1,6 @@
 # Sales Processing
 
-## Pre-Requisites & Local SetUp
+### Pre-Requisites & Local SetUp
 Clone the repository locally and navigate to the directory
 
 There are two files attached
@@ -25,3 +25,13 @@ To run it :
 * Activate the virtual environment you created `source env/bin/activate`
 * Install required packages `pip install -r requirements.txt`
 * Run `python solution.py`
+
+### Scaling
+* Use of asynchronous processing to fasten the processing in the case of large files/ large number of files
+* Use celery workers to batch process the data for the case of many workers
+
+### Assumptions
+* No new files will be added during the processing. 
+* The files don't change during processing.
+
+To handle such cases then we would need to have a variable to store which files are being processed currently, more of emulating the process of database locks.
